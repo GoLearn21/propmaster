@@ -1,0 +1,505 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   TITANIUM PRECISION DESIGN SYSTEM
+   MasterKey Property Management
+   ============================================ */
+
+@layer base {
+  :root {
+    /* ============================================
+       CERAMIC SURFACE PALETTE
+       ============================================ */
+    --surface-primary: 250 250 250;     /* #FAFAFA */
+    --surface-secondary: 245 245 247;   /* #F5F5F7 */
+    --surface-tertiary: 255 255 255;    /* #FFFFFF */
+
+    /* ============================================
+       TEXT COLORS (Midnight Navy, not pure black)
+       ============================================ */
+    --text-primary: 26 29 46;           /* #1A1D2E */
+    --text-secondary: 74 77 94;         /* #4A4D5E */
+    --text-tertiary: 107 114 128;       /* #6B7280 */
+    --text-muted: 156 163 175;          /* #9CA3AF */
+
+    /* ============================================
+       BRAND COLORS
+       ============================================ */
+    --primary: 32 178 170;              /* #20B2AA - MasterKey Teal */
+    --primary-dark: 26 141 135;         /* #1A8D87 */
+    --primary-light: 77 212 204;        /* #4DD4CC */
+
+    --accent-green: 0 204 102;          /* #00CC66 */
+    --accent-green-hover: 0 179 89;     /* #00B359 */
+    --accent-pink: 239 74 129;          /* #EF4A81 */
+    --accent-gold: 255 193 7;           /* #FFC107 */
+
+    /* ============================================
+       STATUS JEWEL COLORS
+       ============================================ */
+    --status-success: 16 185 129;       /* #10B981 */
+    --status-success-bg: 236 253 245;   /* #ECFDF5 */
+    --status-warning: 245 158 11;       /* #F59E0B */
+    --status-warning-bg: 255 251 235;   /* #FFFBEB */
+    --status-error: 239 68 68;          /* #EF4444 */
+    --status-error-bg: 254 242 242;     /* #FEF2F2 */
+    --status-info: 59 130 246;          /* #3B82F6 */
+    --status-info-bg: 239 246 255;      /* #EFF6FF */
+
+    /* ============================================
+       NEUTRAL PALETTE
+       ============================================ */
+    --neutral-50: 250 250 250;
+    --neutral-100: 245 245 247;
+    --neutral-200: 229 231 235;
+    --neutral-300: 209 213 219;
+    --neutral-400: 156 163 175;
+    --neutral-500: 107 114 128;
+    --neutral-600: 74 77 94;
+    --neutral-700: 55 65 81;
+    --neutral-800: 31 41 55;
+    --neutral-900: 26 29 46;
+
+    /* ============================================
+       AMBIENT LIGHT SHADOWS
+       ============================================ */
+    --shadow-color: 26 29 46;
+
+    /* ============================================
+       BORDER & RING
+       ============================================ */
+    --border: 229 231 235;
+    --ring: 32 178 170;
+    --radius: 0.75rem;
+
+    /* ============================================
+       SIDEBAR (Legacy Support)
+       ============================================ */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* ============================================
+       CHART COLORS (for Recharts dark mode support)
+       ============================================ */
+    --chart-grid: #E5E7EB;
+    --chart-axis: #6B7280;
+    --chart-tooltip-bg: #FFFFFF;
+    --chart-tooltip-border: #E5E7EB;
+    --chart-tooltip-text: #374151;
+    --chart-dot-fill: #FFFFFF;
+
+    /* ============================================
+       TIMING & MOTION
+       ============================================ */
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --duration-fast: 150ms;
+    --duration-base: 200ms;
+    --duration-slow: 300ms;
+    --duration-slower: 500ms;
+  }
+
+  /* ============================================
+     DARK MODE
+     ============================================ */
+  .dark {
+    --surface-primary: 15 15 17;        /* #0F0F11 */
+    --surface-secondary: 24 24 27;      /* #18181B */
+    --surface-tertiary: 39 39 42;       /* #27272A */
+
+    --text-primary: 250 250 250;        /* #FAFAFA */
+    --text-secondary: 161 161 170;      /* #A1A1AA */
+    --text-tertiary: 113 113 122;       /* #71717A */
+    --text-muted: 82 82 91;             /* #52525B */
+
+    --neutral-50: 39 39 42;
+    --neutral-100: 24 24 27;
+    --neutral-200: 39 39 42;
+    --neutral-300: 63 63 70;
+    --neutral-400: 82 82 91;
+    --neutral-500: 113 113 122;
+    --neutral-600: 161 161 170;
+    --neutral-700: 212 212 216;
+    --neutral-800: 228 228 231;
+    --neutral-900: 250 250 250;
+
+    --border: 39 39 42;
+    --shadow-color: 0 0 0;
+
+    /* Dark mode status backgrounds */
+    --status-success-bg: 6 78 59;       /* Darker green */
+    --status-warning-bg: 120 53 15;     /* Darker amber */
+    --status-error-bg: 127 29 29;       /* Darker red */
+    --status-info-bg: 30 58 138;        /* Darker blue */
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Dark mode chart colors */
+    --chart-grid: #374151;
+    --chart-axis: #9CA3AF;
+    --chart-tooltip-bg: #1F2937;
+    --chart-tooltip-border: #374151;
+    --chart-tooltip-text: #F9FAFB;
+    --chart-dot-fill: #1F2937;
+  }
+
+  /* ============================================
+     BASE STYLES
+     ============================================ */
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-surface-primary text-text-primary antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* ============================================
+     TYPOGRAPHY UTILITIES
+     ============================================ */
+
+  /* Tabular figures for financial data alignment */
+  .font-tabular {
+    font-feature-settings: "tnum" 1, "lnum" 1;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  /* Proportional figures for body text */
+  .font-proportional {
+    font-feature-settings: "pnum" 1, "onum" 1;
+    font-variant-numeric: proportional-nums oldstyle-nums;
+  }
+
+  /* ============================================
+     GLASS MORPHISM UTILITIES
+     ============================================ */
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl backdrop-saturate-150;
+  }
+
+  .glass-strong {
+    @apply bg-white/90 backdrop-blur-2xl backdrop-saturate-180;
+  }
+
+  .dark .glass {
+    @apply bg-neutral-900/80;
+  }
+
+  .dark .glass-strong {
+    @apply bg-neutral-900/90;
+  }
+
+  /* ============================================
+     VIBRANCY (Frosted Glass for Sidebars)
+     ============================================ */
+  .vibrancy {
+    @apply bg-white/80 backdrop-blur-xl backdrop-saturate-180;
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+  }
+
+  .dark .vibrancy {
+    @apply bg-neutral-900/80;
+  }
+
+  /* ============================================
+     CLAYMORPHISM CARDS
+     ============================================ */
+  .clay-card {
+    @apply bg-white rounded-xl shadow-md;
+    box-shadow:
+      0 4px 12px rgba(26, 29, 46, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .dark .clay-card {
+    @apply bg-neutral-800;
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* ============================================
+     BENTO GRID
+     ============================================ */
+  .bento-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .bento-card {
+    @apply bg-gradient-to-br from-white to-neutral-50 rounded-2xl shadow-md p-6;
+    @apply transition-all duration-200 ease-smooth;
+  }
+
+  .bento-card:hover {
+    @apply shadow-lg -translate-y-0.5;
+  }
+
+  .dark .bento-card {
+    @apply from-neutral-800 to-neutral-900;
+  }
+
+  /* ============================================
+     JEWEL BADGES (Status Indicators)
+     ============================================ */
+  .jewel-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-sm font-medium;
+  }
+
+  .jewel-badge-dot {
+    @apply w-1.5 h-1.5 rounded-full animate-pulse-dot;
+  }
+
+  .jewel-success {
+    @apply bg-status-success-bg text-status-success border border-status-success/20;
+  }
+
+  .jewel-warning {
+    @apply bg-status-warning-bg text-status-warning border border-status-warning/20;
+  }
+
+  .jewel-error {
+    @apply bg-status-error-bg text-status-error border border-status-error/20;
+  }
+
+  .jewel-info {
+    @apply bg-status-info-bg text-status-info border border-status-info/20;
+  }
+
+  /* ============================================
+     BUTTON PHYSICS
+     ============================================ */
+  .btn-physics {
+    @apply transition-all duration-200 ease-spring;
+  }
+
+  .btn-physics:hover {
+    @apply -translate-y-0.5;
+  }
+
+  .btn-physics:active {
+    @apply scale-[0.98] translate-y-0;
+  }
+
+  /* ============================================
+     HOVER LIFT EFFECT
+     ============================================ */
+  .hover-lift {
+    @apply transition-all duration-200 ease-smooth;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-0.5 shadow-lg;
+  }
+
+  /* ============================================
+     SHIMMER SKELETON LOADING
+     ============================================ */
+  .skeleton {
+    @apply relative overflow-hidden bg-neutral-200 rounded;
+  }
+
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  .dark .skeleton {
+    @apply bg-neutral-700;
+  }
+
+  .dark .skeleton::after {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+  }
+
+  /* ============================================
+     ACTIVE NAV INDICATOR
+     ============================================ */
+  .nav-active {
+    @apply relative bg-primary/10 text-primary font-medium;
+  }
+
+  .nav-active::before {
+    content: '';
+    @apply absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-r;
+  }
+
+  /* ============================================
+     SLIDE PANEL
+     ============================================ */
+  .slide-panel {
+    @apply fixed right-0 top-0 h-full bg-white shadow-2xl;
+    @apply transform transition-transform duration-300 ease-spring;
+  }
+
+  .slide-panel[data-state="open"] {
+    @apply translate-x-0;
+  }
+
+  .slide-panel[data-state="closed"] {
+    @apply translate-x-full;
+  }
+
+  .dark .slide-panel {
+    @apply bg-neutral-900;
+  }
+
+  /* ============================================
+     COMMAND PALETTE MODAL
+     ============================================ */
+  .command-palette {
+    @apply fixed inset-0 z-50 flex items-start justify-center pt-[20vh];
+  }
+
+  .command-modal {
+    @apply w-full max-w-xl bg-white/95 backdrop-blur-2xl rounded-2xl shadow-2xl;
+    @apply border border-neutral-200/50 overflow-hidden;
+    @apply animate-scale-in;
+  }
+
+  .dark .command-modal {
+    @apply bg-neutral-900/95 border-neutral-700/50;
+  }
+}
+
+@layer utilities {
+  /* ============================================
+     TEXT COLOR UTILITIES (CSS Variable Based)
+     ============================================ */
+  .text-midnight {
+    color: rgb(var(--text-primary));
+  }
+
+  /* ============================================
+     FOCUS RING UTILITIES
+     ============================================ */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  .focus-ring-inset {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset;
+  }
+
+  /* ============================================
+     SAFE AREA UTILITIES (for mobile)
+     ============================================ */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* ============================================
+     NO SCROLLBAR UTILITY
+     ============================================ */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ============================================
+     GRADIENT TEXT
+     ============================================ */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent-green bg-clip-text text-transparent;
+  }
+}
+
+/* ============================================
+   GLOBAL OVERRIDES
+   ============================================ */
+img {
+  object-position: top;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-primary/20 text-text-primary;
+}
+
+/* Scrollbar styling (non-webkit) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--neutral-300)) transparent;
+}
+
+/* Scrollbar styling (webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-400;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-neutral-600;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-500;
+}
+
+/* Remove spinner from number inputs */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

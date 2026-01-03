@@ -1,0 +1,69 @@
+# Dependencies
+node_modules
+.pnpm-store
+--store-dir
+
+# Build outputs
+dist
+dist-ssr
+build
+*.local
+
+# Environment files (contain secrets)
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+!.env.example
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Testing
+coverage
+.nyc_output
+playwright-report
+test-results
+
+# Caches
+.cache
+.vite
+.turbo
+.parcel-cache
+.next
+*.tsbuildinfo
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Storybook
+storybook-static
+
+# Misc
+*.pem
+*.key
+*.cert
